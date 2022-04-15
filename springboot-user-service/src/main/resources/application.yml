@@ -1,0 +1,48 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /user-service
+logging:
+  level:
+    com.example: debug
+  file:
+    name: /log.log
+spring:
+  datasource:
+    name: boot4-ssm
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/dubbo?serverTimezone=GMT%2B8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      filter: stat
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      max-pool-prepared-statement-per-connection-size: 20
+  thymeleaf:
+    mode: HTML
+    cache: false
+
+mybatis:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mapper/*.xml
+
+# spring-boot dubbo 相关配置
+dubbo:
+  application:
+    name: springboot-user-service
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+
