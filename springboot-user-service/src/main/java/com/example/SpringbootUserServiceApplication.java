@@ -13,6 +13,7 @@ public class SpringbootUserServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootUserServiceApplication.class, args);
+
 	}
 
 }
