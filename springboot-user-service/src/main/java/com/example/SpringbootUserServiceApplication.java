@@ -8,11 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan(basePackages = {"com.example.mapper"})
-@EnableDubbo(scanBasePackages = {"com.example.service.impl"}) //扫描dubbo
+@EnableDubbo //扫描dubbo
 public class SpringbootUserServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootUserServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootUserServiceApplication.class, args);
+    }
 
 }
